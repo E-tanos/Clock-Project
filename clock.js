@@ -21,10 +21,12 @@ $(document).ready(function() {
 		if (hours > 12) {
    		 hours = hours - 12;
  	     meridiem = "PM";
+ 	     hours = "0" + hours;
 		 }
 		// 0 AM and 0 PM should read as 12
 		if (hours === 0) {
-  		  hours = 12;    
+  		  hours = 12;   
+  	
  	     }
 
  	     // If the seconds digit is less than ten                    
@@ -32,6 +34,11 @@ $(document).ready(function() {
   		  // Add the "0" digit to the front
   		  // so 9 becomes "09"
   		  seconds = "0" + seconds;
+		}
+		if (minutes < 10) {
+  		  // Add the "0" digit to the front
+  		  // so 9 becomes "09"
+  		  minutes = "0" + minutes;
 		}
 
 
